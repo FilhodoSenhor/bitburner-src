@@ -1,38 +1,38 @@
-# Getting Started Guide for Beginner Programmers
+# Guia de introdução para programadores iniciantes
 
-_Note_: The [Scripts](../basic/scripts.md) and strategies in this guide aren't necessarily optimal or comprehensive.
-This guide is tailored to help those with minimal programming knowledge experience Bitburner during early stages of the game.
+_Nota_: Os [Scripts](../basic/scripts.md) e estratégias neste guia não são necessariamente ideais ou abrangentes.
+Este guia é personalizado para ajudar aqueles com conhecimento mínimo de programação a experimentar o Bitburner durante os estágios iniciais do jogo.
 
-If you are confused or overwhelmed by the game, especially the coding and scripting aspects, this guide is perfect for you!
+Se você está confuso ou sobrecarregado pelo jogo, especialmente os aspectos de codificação e script, este guia é perfeito para você!
 
-## Introduction
+## Introdução
 
-Bitburner is a cyberpunk-themed incremental RPG.
-You will progress by raising your [Stats](../basic/stats.md), earning money, and with practice, advancing your real-world coding skills.
-After reaching certain criteria, you will receive invitations from in-game [Factions](../basic/factions.md).
-Joining [Factions](../basic/factions.md) and working for them will unlock various [Augmentations](../basic/augmentations.md),
-which are purchased and "installed," adding a persistent bonus to [stats](../basic/stats.md) and other abilities. Working with Factions and installing Augmentations is a basic step for progressing in Bitburner.
+O Bitburner é um RPG incremental com tema cyberpunk.
+Você progredirá aumentando suas [Stats](../basic/stats.md), ganhando dinheiro e, com a prática, aprimorando suas habilidades de codificação no mundo real.
+Após atingir certos critérios, você receberá convites de [Facções](../basic/factions.md) do jogo.
+Juntar-se a [Facções](../basic/factions.md) e trabalhar para elas desbloqueará vários [Aumentos](../basic/augmentations.md),
+que são comprados e "instalados", adicionando um bônus persistente a [estatísticas](../basic/stats.md) e outras habilidades. Trabalhar com Facções e instalar Aumentos é um passo básico para progredir no Bitburner.
 
-The game has an open, minimalistic storyline that can be played in multiple ways to reach your goals.
-Since this guide is written as a basic introduction to Bitburner, it will not expose the entire scope or storyline available.
+O jogo tem um enredo aberto e minimalista que pode ser jogado de várias maneiras para atingir seus objetivos.
+Como este guia foi escrito como uma introdução básica ao Bitburner, ele não exporá todo o escopo ou enredo disponível.
 
-## First Steps
+## Primeiros Passos
 
-I'm going to assume you followed the introductory tutorial when you first began the game.
-In this introductory tutorial, you created a [Script](../basic/scripts.md) called `n00dles.js` and ran it on the `n00dles` server.
-Now, we'll kill this [Script](../basic/scripts.md). There are two ways to do this:
+Vou assumir que você seguiu o tutorial introdutório quando começou o jogo.
+Neste tutorial introdutório, você criou um [Script](../basic/scripts.md) chamado `n00dles.js` e o executou no servidor `n00dles`.
+Agora, vamos matar este [Script](../basic/scripts.md). Há duas maneiras de fazer isso:
 
-- You can go to the Terminal and enter: `$ kill n00dles.js`
-- You can go to the `Active Scripts` page (Alt + s) and press the `Kill Script` button for `n00dles.js`.
+- Você pode ir ao Terminal e digitar: `$ kill n00dles.js`
+- Você pode ir à página `Active Scripts` (Alt + s) e pressionar o botão `Kill Script` para `n00dles.js`.
 
-If you skipped the introductory tutorial, then ignore the part above.
-Instead, go to the `Hacknet Nodes` page (Alt + h) and purchase a [Hacknet Node](../basic/hacknet_nodes.md) to start generating some passive income.
+Se você pulou o tutorial introdutório, ignore a parte acima.
+Em vez disso, vá para a página `Hacknet Nodes` (Alt + h) e compre um [Hacknet Node](../basic/hacknet_nodes.md) para começar a gerar alguma renda passiva.
 
-## Creating our First Script
+## Criando nosso primeiro script
 
-Now, we'll create a generic [hacking](../basic/hacking.md) [Script](../basic/scripts.md) that can be used early on in the game (or throughout the entire game, if you want).
+Agora, criaremos um [script](../basic/hacking.md) genérico de [hacking](../basic/hacking.md) [script](../basic/scripts.md) que pode ser usado no início do jogo (ou durante todo o jogo, se você quiser).
 
-Before we write the [Script](../basic/scripts.md), here are some things you'll want to familiarize yourself with:
+Antes de escrevermos o [script](../basic/scripts.md), aqui estão algumas coisas com as quais você vai querer se familiarizar:
 
 - `hacking`
 - `security`
@@ -42,22 +42,22 @@ Before we write the [Script](../basic/scripts.md), here are some things you'll w
 - `brutessh`
 - `nuke`
 
-To briefly summarize: Each [Server](../basic/servers.md) has a security level that affects how difficult it is to hack.
-Each [Server](../basic/servers.md) also has a certain amount of money, as well as a maximum amount of money it can hold.
-[Hacking](../basic/hacking.md) a [Server](../basic/servers.md) steals a percentage of that [Server](../basic/servers.md)'s money.
-The `hack()` function is used to hack a [Server](../basic/servers.md).
-The `grow()` function is used to increase the amount of money available on a [Server](../basic/servers.md).
-The `weaken()` function is used to decrease a [Server](../basic/servers.md)'s security level.
+Para resumir brevemente: Cada [Servidor](../basic/servers.md) tem um nível de segurança que afeta o quão difícil é hackear.
+Cada [Servidor](../basic/servers.md) também tem uma certa quantia de dinheiro, bem como uma quantia máxima de dinheiro que pode conter.
+[Hacking](../basic/hacking.md) um [Servidor](../basic/servers.md) rouba uma porcentagem do dinheiro daquele [Servidor](../basic/servers.md).
+A função `hack()` é usada para hackear um [Servidor](../basic/servers.md).
+A função `grow()` é usada para aumentar a quantia de dinheiro disponível em um [Servidor](../basic/servers.md).
+A função `weaken()` é usada para diminuir o nível de segurança de um [Servidor](../basic/servers.md).
 
-Now let's move on to actually creating the [Script](../basic/scripts.md).
-Go to your home computer and then create a [Script](../basic/scripts.md) called `early-hack-template.js` by going to [Terminal](../basic/terminal.md) and entering the following two commands:
+Agora vamos prosseguir para realmente criar o [Script](../basic/scripts.md).
+Vá para o seu computador de casa e crie um [Script](../basic/scripts.md) chamado `early-hack-template.js` indo para [Terminal](../basic/terminal.md) e inserindo os dois comandos a seguir:
 
     $ home
     $ nano early-hack-template.js
 
-This will take you to the [Script](../basic/scripts.md) editor, which you can use to code and create [Scripts](../basic/scripts.md).
+Isso o levará ao editor [Script](../basic/scripts.md), que você pode usar para codificar e criar [Scripts](../basic/scripts.md).
 
-Enter the following code in the [Script](../basic/scripts.md) editor:
+Insira o seguinte código no editor [Script](../basic/scripts.md):
 
     /** @param {NS} ns */
     export async function main(ns) {
@@ -98,26 +98,26 @@ Enter the following code in the [Script](../basic/scripts.md) editor:
         }
     }
 
-The [Script](../basic/scripts.md) above contains comments that document what it does, but let's go through it step-by-step anyway.
+O [Script](../basic/scripts.md) acima contém comentários que documentam o que ele faz, mas vamos analisá-lo passo a passo de qualquer maneira.
 
     const target = "n00dles";
 
-This first command defines a string which contains our target [Server](../basic/servers.md).
-That's the [Server](../basic/servers.md) that we're going to [hack](../basic/hacking.md).
-For now, it's set to `"n00dles"` because that's the only [Server](../basic/servers.md) with a required hacking level of `1`.
-If you want to [hack](../basic/hacking.md) a different [Server](../basic/servers.md), simply change this variable to be the hostname of another [Server](../basic/servers.md).
+Este primeiro comando define uma string que contém nosso [Servidor](../basic/servers.md) alvo.
+Esse é o [Servidor](../basic/servers.md) que vamos [hackear](../basic/hacking.md).
+Por enquanto, está definido como `"n00dles"` porque esse é o único [Servidor](../basic/servers.md) com um nível de hacking necessário de `1`.
+Se você quiser [hackear](../basic/hacking.md) um [Servidor](../basic/servers.md) diferente, simplesmente altere esta variável para ser o nome do host de outro [Servidor](../basic/servers.md).
 
     const moneyThresh = ns.getServerMaxMoney(target);
 
-This second command defines a numerical value representing the minimum amount of money that must be available on the target [Server](../basic/servers.md) in order for our [Script](../basic/scripts.md) to [hack](../basic/hacking.md) it.
-If the money available on the target [Server](../basic/servers.md) is less than this value, then our [Script](../basic/scripts.md) will `grow()` the [Server](../basic/servers.md) rather than [hacking](../basic/hacking.md) it.
-It is set to the maximum amount of money that can be available on the [Server](../basic/servers.md).
-The `getServerMaxMoney()` function is used to find this value
+Este segundo comando define um valor numérico que representa a quantia mínima de dinheiro que deve estar disponível no [Servidor](../basic/servers.md) de destino para que nosso [Script](../basic/scripts.md) o [hackeie](../basic/hacking.md).
+Se o dinheiro disponível no [Servidor](../basic/servers.md) de destino for menor que este valor, então nosso [Script](../basic/scripts.md) fará `grow()` no [Servidor](../basic/servers.md) em vez de [hackeá-lo](../basic/hacking.md).
+Ele é definido como a quantia máxima de dinheiro que pode estar disponível no [Servidor](../basic/servers.md).
+A função `getServerMaxMoney()` é usada para encontrar este valor:
 
     const securityThresh = ns.getServerMinSecurityLevel(target);
 
-This third command defines a numerical value representing the minimum security level the target [Server](../basic/servers.md) can have.
-If the target [Server](../basic/servers.md)'s security level is higher than this value, then our [Script](../basic/scripts.md) will `weaken()` the server before doing anything else.
+Este terceiro comando define um valor numérico que representa o nível mínimo de segurança que o [Servidor](../basic/servers.md) de destino pode ter.
+Se o nível de segurança do [Servidor](../basic/servers.md) de destino for maior que este valor, então nosso [Script](../basic/scripts.md) irá `weaken()` o servidor antes de fazer qualquer outra coisa.
 
     if (ns.fileExists("BruteSSH.exe", "home")) {
         ns.brutessh(target);
@@ -125,8 +125,8 @@ If the target [Server](../basic/servers.md)'s security level is higher than this
 
     ns.nuke(target);
 
-This section of code is used to gain root access on the target [Server](../basic/servers.md).
-This is necessary for [hacking](../basic/hacking.md).
+Esta seção de código é usada para obter acesso root no [Servidor](../basic/servers.md) de destino.
+Isso é necessário para [hackear](../basic/hacking.md).
 
     while (true) {
         if (ns.getServerSecurityLevel(target) > securityThresh) {
@@ -141,27 +141,27 @@ This is necessary for [hacking](../basic/hacking.md).
         }
     }
 
-This is the main section that drives our [Script](../basic/scripts.md).
-It dictates the [Script](../basic/scripts.md)'s logic and carries out the [hacking](../basic/hacking.md) operations.
-The `while (true)` creates an infinite loop that will continuously run the [hacking](../basic/hacking.md) logic until the the [Script](../basic/scripts.md) is killed.
+Esta é a seção principal que direciona nosso [Script](../basic/scripts.md).
+Ela dita a lógica do [Script](../basic/scripts.md) e executa as operações de [hacking](../basic/hacking.md).
+O `while (true)` cria um loop infinito que executará continuamente a lógica de [hacking](../basic/hacking.md) até que o [Script](../basic/scripts.md) seja encerrado.
 
-The await keyword is needed for `hack()` / `grow()` / `weaken()` because these commands take time to execute, unlike the others.
-If you forget to await these commands, you will get an exception saying you tried to do multiple things at once, because your code will immediately finish the function call without waiting for the operation to be done.
-Also important is that await can only be used in functions marked `async` (note that `main()` is marked `async`).
+A palavra-chave await é necessária para `hack()` / `grow()` / `weaken()` porque esses comandos levam tempo para serem executados, diferentemente dos outros.
+Se você esquecer de aguardar esses comandos, receberá uma exceção dizendo que tentou fazer várias coisas ao mesmo tempo, porque seu código finalizará imediatamente a chamada de função sem esperar que a operação seja concluída.
+Também é importante que await só pode ser usado em funções marcadas como `async` (note que `main()` é marcado como `async`).
 
-## Running our Scripts
+## Executando nossos scripts
 
-Now we want to start running our [hacking](../basic/hacking.md) [Script](../basic/scripts.md) so that it can start earning us money and experience.
-Our home computer only has 8GB of [RAM](../basic/ram.md), and we'll be using it for something else later.
-Instead, we'll take advantage of the [RAM](../basic/ram.md) on other machines.
+Agora queremos começar a executar nosso [script](../basic/hacking.md) [script](../basic/scripts.md) para que ele possa começar a nos render dinheiro e experiência.
+Nosso computador doméstico tem apenas 8 GB de [RAM](../basic/ram.md), e o usaremos para outra coisa mais tarde.
+Em vez disso, aproveitaremos a [RAM](../basic/ram.md) em outras máquinas.
 
-Go to `Terminal` and enter the following command:
+Vá em `Terminal` e digite o seguinte comando:
 
     $ scan-analyze 2
 
-This will show detailed information about some [Servers](../basic/servers.md) on the network.
-The **network is randomized so it will be different for every person**.
-Here's what mine showed at the time I made this:
+Isso mostrará informações detalhadas sobre alguns [Servidores](../basic/servers.md) na rede.
+A **rede é aleatória, então será diferente para cada pessoa**.
+Aqui está o que o meu mostrou no momento em que fiz isso:
 
     [home ~]> scan-analyze 2
     ┕ home
@@ -213,7 +213,7 @@ Here's what mine showed at the time I made this:
               Number of open ports required to NUKE: 1
               RAM: 8.00GB
 
-Take note of the following servers:
+Tome nota dos seguintes servidores:
 
 - `sigma-cosmetics`
 - `joesguns`
@@ -221,28 +221,28 @@ Take note of the following servers:
 - `hong-fang-tea`
 - `harakiri-sushi`
 
-All of these servers have 16GB of [RAM](../basic/ram.md).
-Furthermore, all of these servers do not require any open ports in order to NUKE.
-In other words, we can gain root access to all of these servers and then run [Scripts](../basic/scripts.md) on them.
+Todos esses servidores têm 16 GB de [RAM](../basic/ram.md).
+Além disso, todos esses servidores não exigem nenhuma porta aberta para NUKE.
+Em outras palavras, podemos obter acesso root a todos esses servidores e então executar [Scripts](../basic/scripts.md) neles.
 
-First, let's determine how many threads of our [hacking](../basic/hacking.md) [Script](../basic/scripts.md) we can run.
-(See the page on [scripts](../basic/scripts.md) for more information on multithreading.)
+Primeiro, vamos determinar quantos threads do nosso [Script](../basic/hacking.md) [Script](../basic/scripts.md) podemos executar.
+(Veja a página em [scripts](../basic/scripts.md) para mais informações sobre multithreading.)
 
-The [Script](../basic/scripts.md) we wrote uses 2.6GB of [RAM](../basic/ram.md).
-You can check this using the following `Terminal` command:
+O [Script](../basic/scripts.md) que escrevemos usa 2,6 GB de [RAM](../basic/ram.md).
+Você pode verificar isso usando o seguinte comando `Terminal`:
 
-    $ mem early-hack-template.js
+$ mem early-hack-template.js
 
-This means we can run 6 threads on a 16GB server.
-Now, to run our [Scripts](../basic/scripts.md) on all of these servers, we have to do the following:
+Isso significa que podemos executar 6 threads em um servidor de 16 GB.
+Agora, para executar nossos [Scripts](../basic/scripts.md) em todos esses servidores, temos que fazer o seguinte:
 
-1. Use the `scp` command to copy our [Script](../basic/scripts.md) to each server.
-2. Use the `connect` command to connect to a server.
-3. Use the `run` command to run the `NUKE.exe` program and gain root access.
-4. Use the `run` command again to run our [Script](../basic/scripts.md).
-5. Repeat steps 2-4 for each server.
+1. Use o comando `scp` para copiar nosso [Script](../basic/scripts.md) para cada servidor.
+2. Use o comando `connect` para conectar a um servidor.
+3. Use o comando `run` para executar o programa `NUKE.exe` e obter acesso root.
+4. Use o comando `run` novamente para executar nosso [Script](../basic/scripts.md).
+5. Repita as etapas 2 a 4 para cada servidor.
 
-Here's the sequence of `Terminal` commands I used in order to achieve this:
+Esta é a sequência de comandos `Terminal` que usei para fazer isso:
 
     $ home
     $ scp early-hack-template.js n00dles
@@ -276,71 +276,71 @@ Here's the sequence of `Terminal` commands I used in order to achieve this:
     $ run NUKE.exe
     $ run early-hack-template.js -t 6
 
-Pressing the `Tab` key in the middle of a Terminal command will attempt to auto-complete the command.
-For example, if you type in `scp ea` and then hit `Tab`, the rest of the [Script](../basic/scripts.md)'s name should automatically be filled in.
-This works for most commands in the game!
+Pressionar a tecla `Tab` no meio de um comando do Terminal tentará completar o comando automaticamente.
+Por exemplo, se você digitar `scp ea` e então pressionar `Tab`, o resto do nome do [Script](../basic/scripts.md) deve ser preenchido automaticamente.
+Isso funciona para a maioria dos comandos do jogo!
 
-The `home` command is used to connect to the home computer. When running our [Scripts](../basic/scripts.md) with the `run early-hack-template.js -t 6` command, the `-t 6` specifies that the [Script](../basic/scripts.md) should be run with 6 threads.
+O comando `home` é usado para conectar ao computador doméstico. Ao executar nossos [Scripts](../basic/scripts.md) com o comando `run early-hack-template.js -t 6`, o `-t 6` especifica que o [Script](../basic/scripts.md) deve ser executado com 6 threads.
 
-Note that the `nectar-net` [Server](../basic/servers.md) isn't in the home computer's immediate network.
-This means you can't directly connect to it from home. You will have to search for it inside the network.
-The results of the `scan-analyze 2` command we ran before will show where it is.
-In my case, I could connect to it by going from `hong-fang-tea` -> `nectar-net`.
-However, this will probably be different for you.
+Observe que o `nectar-net` [Server](../basic/servers.md) não está na rede imediata do computador doméstico.
+Isso significa que você não pode se conectar diretamente a ele de casa. Você terá que procurá-lo dentro da rede.
+Os resultados do comando `scan-analyze 2` que executamos antes mostrarão onde ele está.
+No meu caso, eu poderia conectar-me a ele indo de `hong-fang-tea` -> `nectar-net`.
+No entanto, isso provavelmente será diferente para você.
 
-After running all of these `Terminal` commands, our [Scripts](../basic/scripts.md) are now up and running.
-These will earn money and hacking experience over time.
-These gains will be really slow right now, but they will increase once our hacking skill rises and we start running more [Scripts](../basic/scripts.md).
+Depois de executar todos esses comandos `Terminal`, nossos [Scripts](../basic/scripts.md) agora estão ativos e funcionando.
+Eles renderão dinheiro e experiência de hacking ao longo do tempo.
+Esses ganhos serão muito lentos agora, mas aumentarão quando nossa habilidade de hacking aumentar e começarmos a executar mais [Scripts](../basic/scripts.md).
 
-## Increasing Hacking Level
+## Aumentando o nível de hacking
 
-There are many [Servers](../basic/servers.md) besides `n00dles` that can be hacked, but they have higher required hacking levels.
-Therefore, we should raise our hacking level.
-Not only will this let us hack more [Servers](../basic/servers.md), but it will also increase the effectiveness of our [hacking](../basic/hacking.md) against `n00dles`.
+Existem muitos [Servers](../basic/servers.md) além de `n00dles` que podem ser hackeados, mas eles têm níveis de hacking mais altos.
+Portanto, devemos aumentar nosso nível de hacking.
+Isso não só nos permitirá hackear mais [Servers](../basic/servers.md), mas também aumentará a eficácia do nosso [hacking](../basic/hacking.md) contra `n00dles`.
 
-The easiest way to train your hacking level is to visit Rothman University.
-You can do this from the `City` tab (Alt + w) on the left-hand navigation menu.
-Rothman University should be the "U" near the bottom-right.
-Click the "U" to go to the location.
+A maneira mais fácil de treinar seu nível de hacking é visitar a Rothman University.
+Você pode fazer isso na aba `City` (Alt + w) no menu de navegação à esquerda.
+A Rothman University deve ser o "U" próximo ao canto inferior direito.
+Clique no "U" para ir para o local.
 
-Once you go to Rothman University, you should see a screen with several options.
-These options describe different courses you can take.
-You should click the first button, which says: `Study Computer Science (free)`.
+Quando você for para a Rothman University, deverá ver uma tela com várias opções.
+Essas opções descrevem diferentes cursos que você pode fazer.
+Você deve clicar no primeiro botão, que diz: `Study Computer Science (free)`.
 
-After you click the button, you will start studying and earning hacking experience.
-While you are doing this, you cannot interact with any other part of the game until you click either `Stop taking course` or `Do something else simultaneously`.
+Após clicar no botão, você começará a estudar e ganhar experiência de hacking.
+Enquanto estiver fazendo isso, você não poderá interagir com nenhuma outra parte do jogo até clicar em `Stop taking course` ou `Do something else simultaneously`.
 
-Right now, we want a hacking level of 10.
-You need approximately 174 hacking experience to reach level 10.
-You can check how much hacking experience you have by going to the `Stats` tab (Alt + c) on the left-hand navigation menu.
-Since studying at Rothman University earns you 1 experience per second, this will take 174 seconds, or approximately 3 minutes.
-Feel free to do something in the meantime!
+Agora, queremos um nível de hacking de 10.
+Você precisa de aproximadamente 174 de experiência de hacking para atingir o nível 10.
+Você pode verificar quanta experiência de hacking você tem indo para a aba `Stats` (Alt + c) no menu de navegação à esquerda.
+Como estudar na Rothman University lhe dá 1 experiência por segundo, isso levará 174 segundos, ou aproximadamente 3 minutos.
+Sinta-se à vontade para fazer algo enquanto isso!
 
-## Editing our Hacking Script
+## Editando nosso Script de Hacking
 
-Now that we have a hacking level of 10, we can hack the `joesguns` [Server](../basic/servers.md).
-This [Server](../basic/servers.md) will be slightly more profitable than `n00dles`.
-Therefore, we want to change our [hacking](../basic/hacking.md) [Script](../basic/scripts.md) to target `joesguns` instead of `n00dles`.
+Agora que temos um nível de hacking de 10, podemos hackear o `joesguns` [Server](../basic/servers.md).
+Este [Server](../basic/servers.md) será um pouco mais lucrativo que `n00dles`.
+Portanto, queremos mudar nosso [Script](../basic/hacking.md) [hacking](../basic/scripts.md) para atingir `joesguns` em vez de `n00dles`.
 
-Go to `Terminal` and edit the [hacking](../basic/hacking.md) [Script](../basic/scripts.md) by entering:
+Vá para `Terminal` e edite o [Script](../basic/hacking.md) [hacking](../basic/scripts.md) inserindo:
 
     $ home
     $ nano early-hack-template.js
 
-At the top of the [Script](../basic/scripts.md), change the `target` variable to be `"joesguns"`:
+No topo do [Script](../basic/scripts.md), altere a variável `target` para `"joesguns"`:
 
     const target = "joesguns";
 
-Note that this will **NOT** affect any instances of the [Script](../basic/scripts.md) that are already running.
-This will only affect instances of the [Script](../basic/scripts.md) that are run from this point forward.
+Observe que isso **NÃO** afetará nenhuma instância do [Script](../basic/scripts.md) que já esteja em execução.
+Isso afetará apenas instâncias do [Script](../basic/scripts.md) que forem executadas deste ponto em diante.
 
-## Creating a New Script to Purchase New Servers
+## Criando um novo script para comprar novos servidores
 
-Next, we're going to create a [Script](../basic/scripts.md) that automatically purchases additional [Servers](../basic/servers.md).
-These [Servers](../basic/servers.md) will be used to run many [Scripts](../basic/scripts.md).
-Running this [Script](../basic/scripts.md) will initially be very expensive since purchasing a [Server](../basic/servers.md) costs money, but it will pay off in the long run.
+A seguir, criaremos um [Script](../basic/scripts.md) que compra automaticamente [Servers](../basic/servers.md) adicionais.
+Esses [Servers](../basic/servers.md) serão usados ​​para executar muitos [Scripts](../basic/scripts.md).
+Executar este [Script](../basic/scripts.md) inicialmente será muito caro, pois comprar um [Server](../basic/servers.md) custa dinheiro, mas valerá a pena no longo prazo.
 
-In order to create this [Script](../basic/scripts.md), you should familiarize yourself with the following functions:
+Para criar este [Script](../basic/scripts.md), você deve se familiarizar com as seguintes funções:
 
 - `purchaseServer()`
 - `getPurchasedServerCost()`
@@ -349,12 +349,12 @@ In order to create this [Script](../basic/scripts.md), you should familiarize yo
 - `scp()`
 - `exec()`
 
-Create the [Script](../basic/scripts.md) by going to `Terminal` and typing:
+Crie o [Script](../basic/scripts.md) indo em `Terminal` e digitando:
 
     $ home
     $ nano purchase-server-8gb.js
 
-Paste the following code into the [Script](../basic/scripts.md) editor:
+Cole o seguinte código no editor [Script](../basic/scripts.md):
 
     /** @param {NS} ns */
     export async function main(ns) {
@@ -386,127 +386,127 @@ Paste the following code into the [Script](../basic/scripts.md) editor:
         }
     }
 
-This code uses a while loop to purchase the maximum amount of [Servers](../basic/servers.md) using the `purchaseServer()` function.
-Each of these [Servers](../basic/servers.md) will have 8GB of [RAM](../basic/ram.md), as defined in the `ram` variable.
-Note that the [Script](../basic/scripts.md) uses the command `getServerMoneyAvailable("home")` to get the amount of money you currently have.
-This is then used to check if you can afford to purchase a [Server](../basic/servers.md).
+Este código usa um loop while para comprar a quantidade máxima de [Servers](../basic/servers.md) usando a função `purchaseServer()`.
+Cada um desses [Servers](../basic/servers.md) terá 8 GB de [RAM](../basic/ram.md), conforme definido na variável `ram`.
+Observe que o [Script](../basic/scripts.md) usa o comando `getServerMoneyAvailable("home")` para obter a quantidade de dinheiro que você tem atualmente.
+Isso é usado para verificar se você pode comprar um [Server](../basic/servers.md).
 
-Whenever the script purchases a new [Server](../basic/servers.md), it uses the `scp()` function to copy our [Script](../basic/scripts.md) onto that new [Server](../basic/servers.md), and then it uses the `exec()` function to execute it on that [Server](../basic/servers.md).
+Sempre que o script compra um novo [Server](../basic/servers.md), ele usa a função `scp()` para copiar nosso [Script](../basic/scripts.md) para esse novo [Server](../basic/servers.md), e então ele usa a função `exec()` para executá-lo nesse [Server](../basic/servers.md).
 
-To run this [Script](../basic/scripts.md), go to `Terminal` and type:
+Para executar esse [Script](../basic/scripts.md), vá para `Terminal` e digite:
 
     $ run purchase-server-8gb.js
 
-This purchase will continuously run until it has purchased the maximum number of [Servers](../basic/servers.md).
-When this happens, it'll mean that you have a bunch of new [Servers](../basic/servers.md) that are all running [hacking](../basic/hacking.md) [Scripts](../basic/scripts.md) against the `joesguns` [Server](../basic/servers.md)!
+Esta compra será executada continuamente até que tenha adquirido o número máximo de [Servers](../basic/servers.md).
+Quando isso acontecer, significa que você tem um monte de novos [Servers](../basic/servers.md) que estão todos executando [hacking](../basic/hacking.md) [Scripts](../basic/scripts.md) contra o [Server](../basic/servers.md) `joesguns`!
 
-The reason we're using so many [Scripts](../basic/scripts.md) to hack `joesguns` instead of targeting other [Servers](../basic/servers.md) is because it's more effective.
-This early in the game, we don't have enough [RAM](../basic/ram.md) to efficiently hack multiple targets, and trying to do so would be slow as we'd be spread too thin.
-You should definitely do this later on, though!
+A razão pela qual estamos usando tantos [Scripts](../basic/scripts.md) para hackear `joesguns` em vez de mirar em outros [Servers](../basic/servers.md) é porque é mais eficaz.
+Tão cedo no jogo, não temos [RAM](../basic/ram.md) suficiente para hackear vários alvos com eficiência, e tentar fazer isso seria lento, pois estaríamos muito dispersos.
+Você definitivamente deve fazer isso mais tarde, no entanto!
 
-Note that purchasing a [Server](../basic/servers.md) is fairly expensive, and purchasing the maximum amount of [Servers](../basic/servers.md) even more so.
-At the time of writing this guide, the [Script](../basic/scripts.md) above requires \$11 million in order to finish purchasing all of the 8GB [Servers](../basic/servers.md).
-Therefore, we need to find additional ways to make money to speed up the process!
-These are covered in the next section.
+Observe que comprar um [Server](../basic/servers.md) é bastante caro, e comprar a quantidade máxima de [Servers](../basic/servers.md) ainda mais.
+No momento em que este guia foi escrito, o [Script](../basic/scripts.md) acima requer \$11 milhões para concluir a compra de todos os 8 GB [Servers](../basic/servers.md).
+Portanto, precisamos encontrar maneiras adicionais de ganhar dinheiro para acelerar o processo!
+Elas são abordadas na próxima seção.
 
-## Additional Sources of Income
+## Fontes Adicionais de Renda
 
-There are other ways to gain money in this game besides [Scripts](../basic/scripts.md) & [hacking](../basic/hacking.md).
+Existem outras maneiras de ganhar dinheiro neste jogo além de [Scripts](../basic/scripts.md) e [hacking](../basic/hacking.md).
 
 ## Hacknet Nodes
 
-If you completed the introductory tutorial, you were already introduced to this method: [Hacknet Nodes](../basic/hacknet_nodes.md).
-Once you have enough money, you can start upgrading your [Hacknet Nodes](../basic/hacknet_nodes.md) in order to increase your passive income stream.
-This is completely optional.
-Since each [Hacknet Node](../basic/hacknet_nodes.md) upgrade takes a certain amount of time to "pay itself off", it may not necessarily be in your best interest to use these.
+Se você concluiu o tutorial introdutório, já foi apresentado a este método: [Hacknet Nodes](../basic/hacknet_nodes.md).
+Assim que tiver dinheiro suficiente, você pode começar a atualizar seus [Hacknet Nodes](../basic/hacknet_nodes.md) para aumentar seu fluxo de renda passiva.
+Isso é completamente opcional.
+Como cada atualização de [Hacknet Node](../basic/hacknet_nodes.md) leva um certo tempo para "se pagar", pode não ser necessariamente do seu interesse usá-los.
 
-Nonetheless, [Hacknet Nodes](../basic/hacknet_nodes.md) are a good source of income early in the game, although their effectiveness tapers off later on.
-If you do wind up purchasing and upgrading [Hacknet Nodes](../basic/hacknet_nodes.md), I would suggest only upgrading their levels for now.
-I wouldn't bother with [RAM](../basic/ram.md) and Core upgrades until later on.
+No entanto, [Hacknet Nodes](../basic/hacknet_nodes.md) são uma boa fonte de renda no começo do jogo, embora sua eficácia diminua mais tarde.
+Se você acabar comprando e atualizando [Hacknet Nodes](../basic/hacknet_nodes.md), eu sugeriria apenas atualizar seus níveis por enquanto.
+Eu não me incomodaria com [RAM](../basic/ram.md) e atualizações de Core até mais tarde.
 
 ## Crime
 
-The best source of income right now is from [crimes](../basic/crimes.md).
-This is because it not only gives you a large amount of money, but it also raises your hacking level.
-To commit [crimes](../basic/crimes.md), go to the `City` tab (Alt + w).
-Then, click on the link that says `The Slums`.
+A melhor fonte de renda agora é de [crimes](../basic/crimes.md).
+Isso porque não só lhe dá uma grande quantia de dinheiro, mas também aumenta seu nível de hacking.
+Para cometer [crimes](../basic/crimes.md), vá para a aba `City` (Alt + w).
+Então, clique no link que diz `The Slums`.
 
-In the Slums, you can attempt to commit a variety of [crimes](../basic/crimes.md), each of which gives certain types of experience and money if successful.
-See [crimes](../basic/crimes.md) for more details.
+Nas Slums, você pode tentar cometer uma variedade de [crimes](../basic/crimes.md), cada um dos quais dá certos tipos de experiência e dinheiro se for bem-sucedido.
+Veja [crimes](../basic/crimes.md) para mais detalhes.
 
-You are not always successful when you attempt to commit a crime.
-Nothing bad happens if you fail a [crime](../basic/crimes.md), but you won't earn any money and the experience gained will be reduced.
-Raising your stats improves your chance of successfully committing a [crime](../basic/crimes.md).
+Você nem sempre tem sucesso quando tenta cometer um crime.
+Nada de ruim acontece se você falhar em um [crime](../basic/crimes.md), mas você não ganhará dinheiro e a experiência adquirida será reduzida.
+Aumentar suas estatísticas aumenta sua chance de cometer um [crime](../basic/crimes.md) com sucesso.
 
-Right now, the best option is the `Rob Store` [crime](../basic/crimes.md).
-This takes 60 seconds to attempt, gives \$400k if successful, and gives hacking experience (which is very important right now).
+No momento, a melhor opção é o [crime](../basic/crimes.md) `Rob Store`.
+Isso leva 60 segundos para tentar, dá \$400k se for bem-sucedido e dá experiência de hacking (o que é muito importante agora).
 
-Alternatively, you can also use the `Shoplift` [crime](../basic/crimes.md).
-This takes 2 seconds to attempt and gives \$15k if successful.
-This [crime](../basic/crimes.md) is slightly easier and more profitable than `Rob Store`, but doesn't give hacking experience.
+Como alternativa, você também pode usar o [crime](../basic/crimes.md) `Shoplift`.
+Isso leva 2 segundos para tentar e dá \$15k se for bem-sucedido.
+Este [crime](../basic/crimes.md) é um pouco mais fácil e mais lucrativo do que `Rob Store`, mas não dá experiência de hacking.
 
-## Work for a Company
+## Trabalhe para uma empresa
 
-If you don't want to commit [crimes](../basic/crimes.md), there's another option - working for a [company](../basic/companies.md).
-This will not be nearly as profitable as [crimes](../basic/crimes.md), but will provide [company](../basic/companies.md) [reputation](../basic/reputation.md).
+Se você não quer cometer [crimes](../basic/crimes.md), há outra opção - trabalhar para uma [empresa](../basic/companies.md).
+Isso não será nem de longe tão lucrativo quanto [crimes](../basic/crimes.md), mas dará à [empresa](../basic/companies.md) [reputação](../basic/reputation.md).
 
-Go to the `City` tab on the left-hand navigation menu and then go to `Joe's Guns`.
-At `Joe's Guns`, there will be an option that says `Apply to be an Employee`.
-Click this to get the job.
-Then, a new option will appear that simply says `Work`.
-Click this to start working.
-Working at `Joe's Guns` earns \$110 per second and also grants some experience for every stat except hacking.
+Vá para a aba `City` no menu de navegação à esquerda e depois vá para `Joe's Guns`.
+Em `Joe's Guns`, haverá uma opção que diz `Apply to be an Employee`.
+Clique aqui para obter o emprego.
+Então, uma nova opção aparecerá que diz simplesmente `Work`.
+Clique aqui para começar a trabalhar.
+Trabalhar na `Joe's Guns` rende \$110 por segundo e também concede alguma experiência para cada estatística, exceto hacking.
 
-Working for a [company](../basic/companies.md), like [crime](../basic/crimes.md), is completely passive.
-You can choose to focus on your work, do something else simultaneously, or switch between those two.
-While you focus on work, you will not be able to do anything else in the game.
-If you do something else simultaneously, you will not gain [reputation](../basic/reputation.md) at the same speed.
-You can cancel working at any time.
+Trabalhar para uma [company](../basic/companies.md), como [crime](../basic/crimes.md), é completamente passivo.
+Você pode escolher se concentrar no seu trabalho, fazer outra coisa simultaneamente ou alternar entre os dois.
+Enquanto você se concentra no trabalho, não poderá fazer mais nada no jogo.
+Se você fizer outra coisa simultaneamente, não ganhará [reputation](../basic/reputation.md) na mesma velocidade.
+Você pode cancelar o trabalho a qualquer momento.
 
-Once your hacking hits level 75, you can visit `Carmichael Security` in the city and get a software job there.
-This job offers higher pay and also earns you hacking experience.
+Quando seu hacking atingir o nível 75, você pode visitar `Carmichael Security` na cidade e conseguir um emprego de software lá.
+Este emprego oferece um salário mais alto e também lhe dá experiência de hacking.
 
-There are many more companies in the `City` tab that offer more pay and also more gameplay features.
-Feel free to explore!
+Há muitas outras empresas na aba `City` que oferecem mais pagamento e também mais recursos de jogabilidade.
+Sinta-se à vontade para explorar!
 
-## After you Purchase your New Servers
+## Depois de comprar seus novos servidores
 
-After you've made a total of \$11 million, your automatic [Server](../basic/servers.md)-purchasing [Script](../basic/scripts.md) should finish running.
-This will free up some [RAM](../basic/ram.md) on your home computer.
-We don't want this [RAM](../basic/ram.md) to go to waste, so we'll make use of it.
-Go to `Terminal` and enter the following commands:
+Depois de ganhar um total de \$11 milhões, seu [Script](../basic/scripts.md) de compra automática de [Server](../basic/servers.md) deve terminar de rodar.
+Isso liberará um pouco de [RAM](../basic/ram.md) no seu computador doméstico.
+Não queremos que esta [RAM](../basic/ram.md) seja desperdiçada, então faremos uso dela.
+Vá para `Terminal` e digite os seguintes comandos:
 
     $ home
     $ run early-hack-template.js -t 3
 
-## Reaching a Hacking Level of 50
+## Alcançando um nível de hacking de 50
 
-Once you reach a hacking level of 50, two new important parts of the game open up.
+Quando você alcança um nível de hacking de 50, duas novas partes importantes do jogo se abrem.
 
-## Creating your first program: BruteSSH.exe
+## Criando seu primeiro programa: BruteSSH.exe
 
-On the left-hand navigation menu you will notice a `Create Program` tab (Alt + p) with a red notification icon.
-This indicates that there are programs available to be created.
-Go to that tab, and you'll see a list of all the programs you can currently create.
-Hovering over a program will give a brief description of its function.
-Simply click on a program to start creating it.
+No menu de navegação à esquerda, você notará uma aba `Create Program` (Alt + p) com um ícone de notificação vermelho.
+Isso indica que há programas disponíveis para serem criados.
+Vá para essa aba e você verá uma lista de todos os programas que você pode criar no momento.
+Passar o mouse sobre um programa dará uma breve descrição de sua função.
+Basta clicar em um programa para começar a criá-lo.
 
-Right now, the program we want to create is `BruteSSH.exe`.
-This program is used to open up SSH ports on [Servers](../basic/servers.md).
-This will allow you to hack more [Servers](../basic/servers.md), as many [Servers](../basic/servers.md) in the game require a certain number of opened ports in order for `NUKE.exe` to gain root access.
+No momento, o programa que queremos criar é `BruteSSH.exe`.
+Este programa é usado para abrir portas SSH em [Servers](../basic/servers.md).
+Isso permitirá que você hackeie mais [Servers](../basic/servers.md), pois muitos [Servers](../basic/servers.md) no jogo exigem um certo número de portas abertas para que `NUKE.exe` obtenha acesso root.
 
-Feel free to cancel your work on creating a program at any time, as your progress will be saved and can be picked back up later.
-`BruteSSH.exe` takes about 10 minutes to complete.
+Sinta-se à vontade para cancelar seu trabalho de criação de um programa a qualquer momento, pois seu progresso será salvo e poderá ser retomado mais tarde.
+`BruteSSH.exe` leva cerca de 10 minutos para ser concluído.
 
-## Optional: Create AutoLink.exe
+## Opcional: Criar AutoLink.exe
 
-On the `Create Programs` page, you will notice another program you can create called `AutoLink.exe`.
-If you don't mind waiting another 10-15 minutes, you should go ahead and create this program.
-It makes it much less tedious to connect to other [Servers](../basic/servers.md), but it's not necessary for progression.
+Na página `Criar programas`, você notará outro programa que pode criar chamado `AutoLink.exe`.
+Se não se importar em esperar mais 10-15 minutos, você deve prosseguir e criar este programa.
+Isso torna muito menos tedioso conectar-se a outros [Servidores](../basic/servers.md), mas não é necessário para a progressão.
 
-## Joining your first faction: CyberSec
+## Juntando-se à sua primeira facção: CyberSec
 
-Shortly after you reached level 50 hacking, you should have received a message that said this:
+Pouco depois de atingir o nível 50 de hacking, você deve ter recebido uma mensagem que dizia isso:
 
     Message received from unknown sender:
 
@@ -520,25 +520,25 @@ Shortly after you reached level 50 hacking, you should have received a message t
 
     This message was saved as csec-test.msg onto your home computer.
 
-If you didn't, or if you accidentally closed it, that's okay!
-Messages get saved onto your home computer.
-Enter the following `Terminal` commands to view the message:
+Se você não fez isso, ou se você acidentalmente fechou, tudo bem!
+As mensagens são salvas no seu computador de casa.
+Digite os seguintes comandos `Terminal` para visualizar a mensagem:
 
     $ home
     $ cat csec-test.msg
 
-This message is part of the game's main "quest-line".
-It is a message from the `CyberSec` [faction](../basic/factions.md) that is asking you to pass their test.
-Passing their test is simple, you just have to find their [Server](../basic/servers.md), hack it, and install a backdoor through the `Terminal`.
-Their [Server](../basic/servers.md) is called `CSEC`.
-To do this, we'll use the `scan-analyze` Terminal command, just like we did before:
+Esta mensagem faz parte da principal "quest-line" do jogo.
+É uma mensagem da [faction](../basic/factions.md) `CyberSec` que está pedindo para você passar no teste.
+Passar no teste é simples, você só precisa encontrar o [Server](../basic/servers.md), hackea-lo e instalar um backdoor pelo `Terminal`.
+O [Server](../basic/servers.md) deles é chamado de `CSEC`.
+Para fazer isso, usaremos o comando Terminal `scan-analyze`, assim como fizemos antes:
 
     $ home
     $ scan-analyze 2
 
-This will show you the network for all [Servers](../basic/servers.md) that are up to 2 "nodes" away from your home computer.
-Remember that the network is randomly generated so it'll look different for everyone.
-Here's the relevant part of my `scan-analyze` results:
+Isso mostrará a rede para todos os [Servers](../basic/servers.md) que estão até 2 "nós" de distância do seu computador doméstico.
+Lembre-se de que a rede é gerada aleatoriamente, então ela parecerá diferente para todos.
+Aqui está a parte relevante dos meus resultados de `scan-analyze`:
 
     ┕ home
       ┃   Root Access: YES, Required hacking skill: 1
@@ -557,56 +557,56 @@ Here's the relevant part of my `scan-analyze` results:
               Number of open ports required to NUKE: 1
               RAM: 8.00GB
 
-This tells me that I can reach `CSEC` by going through `iron-gym`:
+Isso me diz que posso chegar a `CSEC` passando por `iron-gym`:
 
     $ connect iron-gym
     $ connect CSEC
 
-If you created the `AutoLink.exe` program earlier, then there is an easier method of connecting to `CSEC`.
-You'll notice that in the `scan-analyze` results, all of the [Server](../basic/servers.md) hostnames are white and underlined.
-You can simply click one of the [Server](../basic/servers.md) hostnames in order to connect to it.
-So, simply click `CSEC`!
+Se você criou o programa `AutoLink.exe` anteriormente, então há um método mais fácil de se conectar ao `CSEC`.
+Você notará que nos resultados do `scan-analyze`, todos os nomes de host [Server](../basic/servers.md) estão em branco e sublinhados.
+Você pode simplesmente clicar em um dos nomes de host [Server](../basic/servers.md) para se conectar a ele.
+Então, simplesmente clique em `CSEC`!
 
-Make sure you notice the required hacking skill for the `CSEC` [Server](../basic/servers.md).
-This is a random value between 51 and 60.
-Although you receive the message from CSEC once you hit 50 hacking, you cannot actually pass their test until your hacking is high enough to install a backdoor on their [Server](../basic/servers.md).
+Certifique-se de observar a habilidade de hacking necessária para o `CSEC` [Server](../basic/servers.md).
+Este é um valor aleatório entre 51 e 60.
+Embora você receba a mensagem do CSEC quando atingir 50 de hacking, você não pode realmente passar no teste deles até que seu hacking seja alto o suficiente para instalar um backdoor no [Server](../basic/servers.md) deles.
 
-After you are connected to the `CSEC` [Server](../basic/servers.md), you can backdoor it.
-Note that this [Server](../basic/servers.md) requires one open port in order to gain root access.
-We can open the SSH port using the `BruteSSH.exe` program we created earlier.
-In `Terminal`:
+Após se conectar ao [Server](../basic/servers.md) `CSEC`, você pode fazer um backdoor nele.
+Observe que este [Server](../basic/servers.md) requer uma porta aberta para obter acesso root.
+Podemos abrir a porta SSH usando o programa `BruteSSH.exe` que criamos anteriormente.
+Em `Terminal`:
 
     $ run BruteSSH.exe
     $ run NUKE.exe
     $ backdoor
 
-After you successfully install the backdoor, you should receive a [faction](../basic/factions.md) invitation from `CyberSec` shortly afterwards.
-Accept it.
-If you accidentally reject the invitation, that's okay.
-Just go to the `Factions` tab (Alt + f) and you should see an option that lets you accept the invitation.
+Após instalar o backdoor com sucesso, você deve receber um convite de [faction](../basic/factions.md) do `CyberSec` logo em seguida.
+Aceite.
+Se você rejeitar o convite acidentalmente, tudo bem.
+Basta ir para a aba `Factions` (Alt + f) e você deve ver uma opção que permite aceitar o convite.
 
-Congrats!
-You just joined your first [faction](../basic/factions.md).
-Don't worry about doing anything with this [faction](../basic/factions.md) yet, we can come back to it later.
+Parabéns!
+Você acabou de se juntar à sua primeira [faction](../basic/factions.md).
+Não se preocupe em fazer nada com esta [faction](../basic/factions.md) ainda, podemos voltar a isso mais tarde.
 
-## Using Additional Servers to Hack Joesguns
+## Usando servidores adicionais para hackear Joesguns
 
-Once you have the `BruteSSH` program, you will be able to gain root access to several additional [Servers](../basic/servers.md).
-These [Servers](../basic/servers.md) have more [RAM](../basic/ram.md) that you can use to run [Scripts](../basic/scripts.md).
-We'll use the [RAM](../basic/ram.md) on these [Servers](../basic/servers.md) to run more [Scripts](../basic/scripts.md) that target `joesguns`.
+Depois de ter o programa `BruteSSH`, você poderá obter acesso root a vários [Servers](../basic/servers.md) adicionais.
+Esses [Servers](../basic/servers.md) têm mais [RAM](../basic/ram.md) que você pode usar para executar [Scripts](../basic/scripts.md).
+Usaremos a [RAM](../basic/ram.md) nesses [Servers](../basic/servers.md) para executar mais [Scripts](../basic/scripts.md) que têm como alvo `joesguns`.
 
-## Copying our Scripts
+## Copiando nossos Scripts
 
-The [Servers](../basic/servers.md) we'll be using to run our [Scripts](../basic/scripts.md) are:
+Os [Servers](../basic/servers.md) que usaremos para executar nossos [Scripts](../basic/scripts.md) são:
 
 - `neo-net`
 - `zer0`
 - `max-hardware`
 - `iron-gym`
 
-All of these [Servers](../basic/servers.md) have 32GB of [RAM](../basic/ram.md).
-You can use the `Terminal` command `scan-analyze 3` to see for yourself.
-To copy our [hacking](../basic/hacking.md) [Scripts](../basic/scripts.md) onto these [Servers](../basic/servers.md), go to `Terminal` and run:
+Todos esses [Servers](../basic/servers.md) têm 32 GB de [RAM](../basic/ram.md).
+Você pode usar o comando `Terminal` `scan-analyze 3` para ver por si mesmo.
+Para copiar nossos [Scripts](../basic/hacking.md) [hacking](../basic/scripts.md) nesses [Servers](../basic/servers.md), vá para `Terminal` e execute:
 
     $ home
     $ scp early-hack-template.js neo-net
@@ -614,105 +614,105 @@ To copy our [hacking](../basic/hacking.md) [Scripts](../basic/scripts.md) onto t
     $ scp early-hack-template.js max-hardware
     $ scp early-hack-template.js iron-gym
 
-Since each of these [Servers](../basic/servers.md) has 32GB of [RAM](../basic/ram.md), we can run our [hacking](../basic/hacking.md) script with 12 threads on each [Server](../basic/servers.md).
-By now, you should know how to connect to [Servers](../basic/servers.md).
-So find and connect to each of the [Servers](../basic/servers.md) above using the `scan-analyze 3` `Terminal` command.
-Then, use following `Terminal` command to run our [hacking](../basic/hacking.md) script with 12 threads:
+Como cada um desses [Servers](../basic/servers.md) tem 32 GB de [RAM](../basic/ram.md), podemos executar nosso script [hacking](../basic/hacking.md) com 12 threads em cada [Server](../basic/servers.md).
+Agora, você deve saber como se conectar a [Servers](../basic/servers.md).
+Então, encontre e conecte-se a cada um dos [Servers](../basic/servers.md) acima usando o comando `scan-analyze 3` `Terminal`.
+Em seguida, use o seguinte comando `Terminal` para executar nosso script [hacking](../basic/hacking.md) com 12 threads:
 
-    $ run early-hack-template.js -t 12
+$ run early-hack-template.js -t 12
 
-Remember that if you have the `AutoLink` program, you can simply click on the hostname of a [Server](../basic/servers.md) after running `scan-analyze` to connect to it.
+Lembre-se de que se você tiver o programa `AutoLink`, você pode simplesmente clicar no nome do host de um [Servidor](../basic/servers.md) após executar `scan-analyze` para se conectar a ele.
 
-## Profiting from Scripts & Gaining Reputation with CyberSec
+## Lucrando com scripts e ganhando reputação com CyberSec
 
-Now it's time to play the waiting game.
-It will take some time for your [Scripts](../basic/scripts.md) to start earning money.
-Remember that most of your [Scripts](../basic/scripts.md) are targeting `joesguns`.
-It will take a bit for them to `grow()` and `weaken()` the [Server](../basic/servers.md) to the appropriate values before they start [hacking](../basic/hacking.md) it.
-Once they do, however, the [Scripts](../basic/scripts.md) will be very profitable.
+Agora é hora de jogar o jogo da espera.
+Levará algum tempo para seus [Scripts](../basic/scripts.md) começarem a ganhar dinheiro.
+Lembre-se de que a maioria dos seus [Scripts](../basic/scripts.md) estão mirando em `joesguns`.
+Levará um tempo para eles `grow()` e `weaken()` o [Server](../basic/servers.md) para os valores apropriados antes de começarem a [hackear](../basic/hacking.md) ele.
+Uma vez que o fizerem, no entanto, os [Scripts](../basic/scripts.md) serão muito lucrativos.
 
-For reference, in about two hours after starting my first [Script](../basic/scripts.md), my [Scripts](../basic/scripts.md) had a production rate of \$20k per second and had earned a total of \$70 million.
-(You can see these stats on the `Active Scripts` tab).
+Para referência, em cerca de duas horas após iniciar meu primeiro [Script](../basic/scripts.md), meus [Scripts](../basic/scripts.md) tiveram uma taxa de produção de \$20k por segundo e ganharam um total de \$70 milhões.
+(Você pode ver essas estatísticas na aba `Active Scripts`).
 
-After another 15 minutes, the production rate had increased to \$25k per second and the [Scripts](../basic/scripts.md) had made an additional \$55 million.
+Após outros 15 minutos, a taxa de produção aumentou para \$25k por segundo e os [Scripts](../basic/scripts.md) ganharam um adicional de \$55 milhões.
 
-Your results will vary based on how fast you earned money from [crime](../basic/crimes.md)/[working](../basic/companies.md)/[hacknet nodes](../basic/hacknet_nodes.md), but this will hopefully give you a good indication of how much the [Scripts](../basic/scripts.md) can earn.
+Seus resultados variam com base na rapidez com que você ganhou dinheiro com [crime](../basic/crimes.md)/[working](../basic/companies.md)/[hacknet nodes](../basic/hacknet_nodes.md), mas isso deve lhe dar uma boa indicação de quanto os [Scripts](../basic/scripts.md) podem ganhar.
 
-In the meantime, we are going to be gaining reputation with the `CyberSec` [faction](../basic/factions.md).
-Go to the `Factions` tab (Alt + f) on the left-hand navigation menu, and from there select `CyberSec`.
-In the middle of the page there should be a button for `Hacking Contracts`.
-Click it to start earning [reputation](../basic/reputation.md) for the `CyberSec` [faction](../basic/factions.md) (as well as some hacking experience).
-The higher your hacking level, the more [reputation](../basic/reputation.md) you will gain.
-Note that while you are working for a [faction](../basic/factions.md), you can choose to not interact with the rest of the game in any way to gain [reputation](../basic/reputation.md) at full speed.
-You can also select to do something else simultaneously, gaining [reputation](../basic/reputation.md) a bit more slowly, until you focus again.
-You can cancel your [faction](../basic/factions.md) work at any time with no penalty to your [reputation](../basic/reputation.md) gained so far.
+Enquanto isso, vamos ganhar reputação com a facção `CyberSec` [faction](../basic/factions.md).
+Vá para a aba `Factions` (Alt + f) no menu de navegação à esquerda e, de lá, selecione `CyberSec`.
+No meio da página, deve haver um botão para `Hacking Contracts`.
+Clique nele para começar a ganhar [reputation](../basic/reputation.md) para a facção `CyberSec` [faction](../basic/factions.md) (assim como alguma experiência de hacking).
+Quanto maior seu nível de hacking, mais [reputation](../basic/reputation.md) você ganhará.
+Note que enquanto você estiver trabalhando para uma [faction](../basic/factions.md), você pode escolher não interagir com o resto do jogo de nenhuma forma para ganhar [reputation](../basic/reputation.md) a toda velocidade.
+Você também pode selecionar fazer outra coisa simultaneamente, ganhando [reputation](../basic/reputation.md) um pouco mais lentamente, até se concentrar novamente.
+Você pode cancelar seu trabalho de [facção](../basic/factions.md) a qualquer momento sem nenhuma penalidade para sua [reputation](../basic/reputation.md) ganha até agora.
 
-## Purchasing Upgrades and Augmentations
+## Comprando Upgrades e Aumentos
 
-As I mentioned before, within 1-2 hours I had earned over \$200 million.
-Now, it's time to spend all of this money on some persistent upgrades to help progress!
+Como mencionei antes, em 1-2 horas eu tinha ganhado mais de \$200 milhões.
+Agora, é hora de gastar todo esse dinheiro em alguns upgrades persistentes para ajudar no progresso!
 
-## Upgrading RAM on Home computer
+## Atualizando a RAM no computador doméstico
 
-The most important thing to upgrade right now is the [RAM](../basic/ram.md) on your home computer.
-This will allow you to run more [Scripts](../basic/scripts.md).
+A coisa mais importante para atualizar agora é a [RAM](../basic/ram.md) no seu computador doméstico.
+Isso permitirá que você execute mais [Scripts](../basic/scripts.md).
 
-To upgrade your [RAM](../basic/ram.md), go to the `City` tab and visit the company `Alpha Enterprises`.
-There will be a button that says `Upgrade 'home' RAM (8.00GB -> 16.00GB) - $1.010m`.
-Click it to upgrade your [RAM](../basic/ram.md).
+Para atualizar sua [RAM](../basic/ram.md), vá para a aba `City` e visite a empresa `Alpha Enterprises`.
+Haverá um botão que diz `Upgrade 'home' RAM (8.00GB -> 16.00GB) - $1.010m`.
+Clique nele para atualizar sua [RAM](../basic/ram.md).
 
-I recommend getting your home computer's [RAM](../basic/ram.md) to **at least** 128GB.
-Getting it even higher would be better.
+Eu recomendo obter a [RAM](../basic/ram.md) do seu computador doméstico para **pelo menos** 128 GB.
+Obter ainda mais seria melhor.
 
-## Purchasing your First Augmentations
+## Comprando seus primeiros aumentos
 
-Once you get ~1000 [reputation](../basic/reputation.md) with the `CyberSec` [faction](../basic/factions.md), you can purchase your first [Augmentation](../basic/augmentations.md) from them.
+Depois de obter ~1000 [reputation](../basic/reputation.md) com a [faction](../basic/factions.md) `CyberSec`, você pode comprar seu primeiro [Augmentations](../basic/augmentations.md) deles.
 
-To do this, go to the `Factions` tab on the left-hand navigation menu (Alt + f) and select `CyberSec`.
-There is a button near the bottom that says `Purchase Augmentations`.
-This will bring up a page that displays all of the [Augmentations](../basic/augmentations.md) available from `CyberSec`.
-Some of them may be locked right now.
-To unlock these, you will need to earn more [reputation](../basic/reputation.md) with `CyberSec`.
+Para fazer isso, vá para a aba `Factions` no menu de navegação à esquerda (Alt + f) e selecione `CyberSec`.
+Há um botão perto do final que diz `Purchase Augmentations`.
+Isso abrirá uma página que exibe todos os [Augmentations](../basic/augmentations.md) disponíveis na `CyberSec`.
+Alguns deles podem estar bloqueados agora.
+Para desbloqueá-los, você precisará ganhar mais [reputation](../basic/reputation.md) com `CyberSec`.
 
-[Augmentations](../basic/augmentations.md) give persistent upgrades in the form of multipliers.
-These aren't very powerful early in the game because the multipliers are small.
-However, the effects of [Augmentations](../basic/augmentations.md) stack multiplicatively **with each other**, so as you continue to install many [Augmentations](../basic/augmentations.md), their effects will increase significantly.
+[Augmentations](../basic/augmentations.md) dão atualizações persistentes na forma de multiplicadores.
+Eles não são muito poderosos no início do jogo porque os multiplicadores são pequenos.
+No entanto, os efeitos dos [Augmentations](../basic/augmentations.md) se acumulam multiplicativamente **uns com os outros**, então, conforme você continua a instalar muitos [Augmentations](../basic/augmentations.md), seus efeitos aumentarão significativamente.
 
-Because of this, I would recommend investing more in [RAM](../basic/ram.md) upgrades for your home computer rather than [Augmentations](../basic/augmentations.md) early on.
-Having enough [RAM](../basic/ram.md) to run many [Scripts](../basic/scripts.md) will allow you to make much more money, and then you can come back later on and get all these [Augmentations](../basic/augmentations.md).
+Por isso, eu recomendaria investir mais em atualizações de [RAM](../basic/ram.md) para seu computador doméstico em vez de [Augmentations](../basic/augmentations.md) no início.
+Ter [RAM](../basic/ram.md) suficiente para executar muitos [Scripts](../basic/scripts.md) permitirá que você ganhe muito mais dinheiro, e então você pode voltar mais tarde e obter todos esses [Augmentations](../basic/augmentations.md).
 
-Right now, I suggest purchasing at the very least the `Neurotrainer I` [Augmentation](../basic/augmentations.md) from `CyberSec`.
-If you have the money to spare, I would also suggest getting `BitWire` and several levels of the `NeuroFlux Governor` (`NFG`) [Augmentations](../basic/augmentations.md).
-Note that each time you purchase an [Augmentation](../basic/augmentations.md), **the price of purchasing another increases by 90%**, so make sure you buy the most expensive [Augmentation](../basic/augmentations.md) first.
-Don't worry, once you choose to install [Augmentations](../basic/augmentations.md), their prices will reset back to their original values.
+Agora, sugiro comprar pelo menos o `Neurotrainer I` [Augmentations](../basic/augmentations.md) da `CyberSec`.
+Se você tiver dinheiro sobrando, eu também sugeriria obter `BitWire` e vários níveis do `NeuroFlux Governor` (`NFG`) [Augmentations](../basic/augmentations.md).
+Note que cada vez que você compra um [Augmentation](../basic/augmentations.md), **o preço de compra de outro aumenta em 90%**, então certifique-se de comprar o [Augmentation](../basic/augmentations.md) mais caro primeiro.
+Não se preocupe, uma vez que você escolher instalar [Augmentations](../basic/augmentations.md), seus preços serão redefinidos para seus valores originais.
 
-## Next Steps
+## Próximos passos
 
-That's the end of the walkthrough portion of this guide!
-You should continue to explore what the game has to offer.
-There's quite a few features that aren't covered or mentioned in this guide, and even more that get unlocked as you continue to play!
+Este é o fim da parte de passo a passo deste guia!
+Você deve continuar explorando o que o jogo tem a oferecer.
+Há alguns recursos que não são abordados ou mencionados neste guia, e ainda mais que são desbloqueados conforme você continua jogando!
 
-Also, check out the API documentation to see what it has to offer.
-Writing [Scripts](../basic/scripts.md) to perform and automate various tasks is where most of the fun in the game comes from (in my opinion)!
+Além disso, confira a documentação da API para ver o que ela tem a oferecer.
+Escrever [Scripts](../basic/scripts.md) para executar e automatizar várias tarefas é de onde vem a maior parte da diversão do jogo (na minha opinião)!
 
-The following are a few things you may want to consider doing in the near future.
+A seguir estão algumas coisas que você pode querer considerar fazer em um futuro próximo.
 
-## Installing Augmentations (and Resetting)
+## Instalando Aumentos (e Redefinindo)
 
-If you've purchased any [Augmentations](../basic/augmentations.md), you'll need to install them before you actually gain their effects.
-Installing [Augmentations](../basic/augmentations.md) is the game's "soft-reset" or "prestige" mechanic.
+Se você comprou algum [Augmentations](../basic/augmentations.md), você precisará instalá-lo antes de realmente ganhar seus efeitos.
+Instalar [Augmentations](../basic/augmentations.md) é a mecânica de "soft-reset" ou "prestige" do jogo.
 
-To install your [Augmentations](../basic/augmentations.md), go to the `Augmentations` tab (Alt + a) on the left-hand navigation menu.
-You will see a list of all of the [Augmentations](../basic/augmentations.md) you have purchased.
-Below that, you will see a button that says `Install Augmentations`.
-Be warned, after clicking this there is no way to undo it (unless you load an earlier save).
+Para instalar seus [Augmentations](../basic/augmentations.md), vá para a aba `Augmentations` (Alt + a) no menu de navegação à esquerda.
+Você verá uma lista de todos os [Augmentations](../basic/augmentations.md) que você comprou.
+Abaixo disso, você verá um botão que diz `Install Augmentations`.
+Esteja avisado, depois de clicar aqui não há como desfazer (a menos que você carregue um salvamento anterior).
 
-## Automating the Script Startup Process
+## Automatizando o Processo de Inicialização do Script
 
-Whenever you install [Augmentations](../basic/augmentations.md), all of your [Scripts](../basic/scripts.md) are killed and you'll have to re-run them.
-Doing this every time you install [Augmentations](../basic/augmentations.md) would be very tedious and annoying, so you should write a [Script](../basic/scripts.md) to automate the process.
-Here's a simple example for a startup [Script](../basic/scripts.md).
-Feel free to adjust it to your liking.
+Sempre que você instala [Augmentations](../basic/augmentations.md), todos os seus [Scripts](../basic/scripts.md) são encerrados e você terá que executá-los novamente.
+Fazer isso toda vez que você instala [Augmentations](../basic/augmentations.md) seria muito tedioso e irritante, então você deve escrever um [Script](../basic/scripts.md) para automatizar o processo.
+Aqui está um exemplo simples para um [Script](../basic/scripts.md) de inicialização.
+Sinta-se à vontade para ajustá-lo ao seu gosto.
 
     /** @param {NS} ns */
     export async function main(ns) {
@@ -760,15 +760,15 @@ Feel free to adjust it to your liking.
         }
     }
 
-## Random Tips
+## Dicas aleatórias
 
-- Early on in the game, it's better to spend your money on upgrading [RAM](../basic/ram.md) and purchasing new [Servers](../basic/servers.md) rather than spending it on [Augmentations](../basic/augmentations.md)
-- The more money available on a [Server](../basic/servers.md), the more effective the `hack()` and `grow()` functions will be.
-  This is because both of these functions use percentages rather than flat values.
-  `hack()` steals a percentage of a [Server](../basic/servers.md)'s total available money, and `grow()` increases a [Server](../basic/servers.md)'s money by X%.
-- There is a limit to how much money can exist on a [Server](../basic/servers.md).
-  This value is different for each [Server](../basic/servers.md).
-  The `getServerMaxMoney()` function will tell you this maximum value.
-- At this stage in the game, your combat stats (strength, defense, etc.) are not nearly as useful as your hacking stat.
-  Do not invest too much time or money into gaining combat stat exp.
-- As a rule of thumb, your hacking target should be the [Server](../basic/servers.md) with highest max money that's required hacking level is under 1/2 of your hacking level.
+- No início do jogo, é melhor gastar seu dinheiro atualizando [RAM](../basic/ram.md) e comprando novos [Serves](../basic/servers.md) em vez de gastá-lo em [Augmentations](../basic/augmentations.md)
+- Quanto mais dinheiro disponível em um [Server](../basic/servers.md), mais eficazes serão as funções `hack()` e `grow()`.
+Isso ocorre porque ambas as funções usam porcentagens em vez de valores fixos.
+`hack()` rouba uma porcentagem do dinheiro total disponível de um [Server](../basic/servers.md) e `grow()` aumenta o dinheiro de um [Server](../basic/servers.md) em X%.
+- Há um limite para a quantidade de dinheiro que pode existir em um [Server](../basic/servers.md).
+Este valor é diferente para cada [Server](../basic/servers.md).
+A função `getServerMaxMoney()` dirá a você este valor máximo.
+- Nesta fase do jogo, suas estatísticas de combate (força, defesa, etc.) não são tão úteis quanto suas estatísticas de hacking.
+Não invista muito tempo ou dinheiro para ganhar exp de estatísticas de combate.
+- Como regra geral, seu alvo de hacking deve ser o [Server](../basic/servers.md) com o maior dinheiro máximo que o nível de hacking necessário esteja abaixo de 1/2 do seu nível de hacking.
